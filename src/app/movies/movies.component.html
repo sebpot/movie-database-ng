@@ -1,1 +1,12 @@
-<p>movies works!</p>
+<div
+    class="flex flex-wrap gap-3 gap-y-7 justify-center p-5">
+    <div
+        class="border-b-2 border-solid border-white" 
+        *ngFor="let movie of movies">
+        <img 
+            [src] = "'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
+            alt="{{movie.title}}"
+            class="h-72 rounded-lg hover:border-solid hover:border hover:border-bg-white hover:cursor-pointer grayscale hover:grayscale-0 transition-[filter] duration-200 ease-linear">
+        <p>{{movie.title}}</p>
+    </div>
+</div>

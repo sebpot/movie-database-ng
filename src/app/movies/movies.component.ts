@@ -8,6 +8,7 @@ import { DataStorageService } from '../shared/data-storage.service';
 })
 export class MoviesComponent implements OnInit {
   public movies: any[];
+  public hoveredMovie: any = null;
 
   constructor(private dataStorageService: DataStorageService){}
 
@@ -19,4 +20,11 @@ export class MoviesComponent implements OnInit {
     );
   }
 
+  onMouseEnter(movie) {
+    this.hoveredMovie = movie;
+  }
+
+  onMouseLeave() {
+    this.hoveredMovie = null;
+  }
 }

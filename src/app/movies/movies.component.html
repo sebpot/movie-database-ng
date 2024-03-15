@@ -1,12 +1,17 @@
-<div
-    class="flex flex-wrap gap-3 gap-y-7 justify-center p-5">
-    <div
-        class="border-b-2 border-solid border-white" 
-        *ngFor="let movie of movies">
-        <img 
-            [src] = "'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
-            alt="{{movie.title}}"
-            class="h-72 rounded-lg hover:border-solid hover:border hover:border-bg-white hover:cursor-pointer grayscale hover:grayscale-0 transition-[filter] duration-200 ease-linear">
-        <p>{{movie.title}}</p>
+<div class="flex justify-center">
+    <div class="w-11/12 flex justify-start flex-wrap gap-3 gap-y-7 p-5 pt-24 pb-14">
+        <div
+            class="border-b-2 border-solid border-white" 
+            *ngFor="let movie of movies">
+            <img 
+                [src] = "'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
+                alt="{{movie.title}}"
+                class="h-72 rounded-lg hover:border-solid hover:border-2 hover:border-bg-white hover:cursor-pointer hover:scale-150 hover:relative hover:z-20 transition-[filter] duration-200 ease-linear"
+                (mouseenter)="onMouseEnter(movie)"
+                (mouseleave)="onMouseLeave()"
+                [class.grayscale]="hoveredMovie && movie !== hoveredMovie">
+            <p>{{movie.title}}</p>
+        </div>
     </div>
 </div>
+

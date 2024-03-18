@@ -19,6 +19,17 @@ export class DataStorageService {
         );
     }
 
+    fetchMovie(movie_id: number) {
+        return this.http.get(
+            'https://api.themoviedb.org/3/movie/' + movie_id + '?language=en-US'
+        ).pipe(
+            take(1),
+            catchError(error => {
+                return throwError(error);
+            })
+        );
+    }
+
     fetchTVShows() {
         return this.http.get(
             'https://api.themoviedb.org/3/trending/tv/day?language=en-US'

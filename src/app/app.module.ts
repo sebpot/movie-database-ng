@@ -9,6 +9,8 @@ import { MoviesComponent } from './movies/movies.component';
 import { HomeComponent } from './home/home.component';
 import { ShowsComponent } from './shows/shows.component';
 import { ActorsComponent } from './actors/actors.component';
+import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { MinToHoursPipe } from './shared/min-to-hours.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ActorsComponent } from './actors/actors.component';
     MoviesComponent,
     HomeComponent,
     ShowsComponent,
-    ActorsComponent
+    ActorsComponent,
+    MovieDetailsComponent,
+    MinToHoursPipe
   ],
   imports: [
     BrowserModule,

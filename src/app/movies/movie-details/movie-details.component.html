@@ -1,0 +1,32 @@
+<div class="flex justify-center gap-6 pt-24">
+    <div>
+        <p class="text-2xl bg-yellow-400 w-fit px-1 text-black absolute float-left mt-7 justify-end z-10">{{movie.vote_average | number : '1.1-1'}}</p>
+        <img 
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"  
+        alt="{{movie.title}}"
+        class="rounded-lg w-80 border border-solid border-white">
+    </div>
+    <div class="w-1/2">
+        <p class="w-fit text-5xl border-b-4 border-solid mb-6">{{movie.title}}</p>
+        <p>{{movie.overview}}</p>
+        <p class="mt-9 ml-5"><span class="text-white opacity-60 font-light">genres:</span> &nbsp; 
+            <span *ngFor="let genre of movie.genres; let isLast=last">
+                {{genre.name}}{{isLast ? '' : ', '}}
+            </span>
+        </p>
+        <p class="ml-5"><span class="text-white opacity-60 font-light">production:</span> &nbsp;
+            <span *ngFor="let prodCountry of movie.production_countries; let isLast=last">
+                {{prodCountry.name}}{{isLast ? '' : ', '}}
+            </span>
+        </p>
+        <p class="ml-5"><span class="text-white opacity-60 font-light">duration:</span> &nbsp;
+            {{movie.runtime | minToHours}}
+        </p>
+        <p class="ml-5"><span class="text-white opacity-60 font-light">release date:</span> &nbsp;
+            {{movie.release_date | date:'longDate'}}
+        </p>
+        <p *ngIf="movie.belongs_to_collection" class="ml-5"><span class="text-white opacity-60 font-light">collection:</span> &nbsp;
+            {{movie.belongs_to_collection.name}}
+        </p>
+    </div>
+</div>

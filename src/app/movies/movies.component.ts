@@ -7,8 +7,8 @@ import { DataStorageService } from '../shared/data-storage.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  public movies: any[];
-  public hoveredMovie: any = null;
+  movies: any[];
+  hoveredMovie: any = null;
 
   constructor(private dataStorageService: DataStorageService){}
 
@@ -16,6 +16,7 @@ export class MoviesComponent implements OnInit {
     this.dataStorageService.fetchMovies().subscribe(
       (responseData: any) => {
         this.movies = responseData.results;
+        console.log(this.movies);
       }
     );
   }

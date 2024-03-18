@@ -1,9 +1,20 @@
-<div class="min-h-svh bg-blue-950 relative">
-  <div class="w-full border-b-2 border-solid border-white flex items-center fixed z-10 bg-blue-950">
-    <p class="font-medium tracking-wide text-2xl p-5 hover:cursor-pointer" routerLink="/">Movie Database</p>
-    <p class="font-medium p-5 border-l border-dashed border-white hover:bg-blue-900 hover:cursor-pointer" routerLink="/movies">Movies</p>
-    <p class="font-medium p-5 border-l border-dashed border-white hover:bg-blue-900 hover:cursor-pointer" routerLink="/shows">TV shows</p>
-    <p class="font-medium p-5 border-l border-dashed border-white hover:bg-blue-900 hover:cursor-pointer" routerLink="/actors">Actors</p>
+<div class="min-h-svh bg-indigo-950 relative">
+  <div class="w-full border-b-2 border-solid border-white flex items-center fixed z-10 bg-indigo-900">
+    <p 
+      class="font-medium tracking-wide text-2xl p-5 hover:cursor-pointer" 
+      routerLink="/">Movie Database</p>
+    <p 
+      class="font-medium p-4 hover:bg-slate-300 hover:text-black hover:cursor-pointer hover:rounded-se-lg hover:rounded-ss-lg" 
+      routerLink="/movies"
+      routerLinkActive="active">Movies</p>
+    <p 
+      class="font-medium p-4 hover:bg-slate-300 hover:text-black hover:cursor-pointer hover:rounded-se-lg hover:rounded-ss-lg" 
+      routerLink="/shows"
+      routerLinkActive="active">TV shows</p>
+    <p 
+      class="font-medium p-4 hover:bg-slate-300 hover:text-black hover:cursor-pointer hover:rounded-se-lg hover:rounded-ss-lg" 
+      routerLink="/actors"
+      routerLinkActive="active">Actors</p>
   </div>
 
   <router-outlet></router-outlet>

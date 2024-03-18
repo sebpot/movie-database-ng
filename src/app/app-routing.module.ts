@@ -4,6 +4,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { HomeComponent } from './home/home.component';
 import { ShowsComponent } from './shows/shows.component';
 import { ActorsComponent } from './actors/actors.component';
+import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 
 const routes: Routes = [
   {
@@ -13,10 +14,13 @@ const routes: Routes = [
     path: 'movies', component: MoviesComponent, pathMatch: 'full'
   },
   {
-    path: 'shows', component: ShowsComponent, pathMatch: 'full'
+    path: 'movies/:id', component: MovieDetailsComponent
   },
   {
-    path: 'actors', component: ActorsComponent, pathMatch: 'full'
+    path: 'shows', component: ShowsComponent
+  },
+  {
+    path: 'actors', component: ActorsComponent
   }
 ];
 

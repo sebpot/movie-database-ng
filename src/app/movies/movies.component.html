@@ -1,12 +1,14 @@
 <div class="flex justify-center">
     <div class="w-11/12 flex justify-start flex-wrap gap-3 gap-y-7 p-5 pt-24 pb-14">
         <div
-            class="border-b-2 border-solid border-white" 
+            class="flex flex-col self-start border-b-2 border-solid border-white w-56" 
+            [routerLink]="['/movies', movie.id]"
             *ngFor="let movie of movies">
+            <p class="bg-yellow-400 w-fit px-1 text-black absolute float-left mt-7 self-end z-10">{{movie.vote_average | number : '1.1-1'}}</p>
             <img 
                 [src] = "'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
                 alt="{{movie.title}}"
-                class="h-72 rounded-lg hover:border-solid hover:border-2 hover:border-bg-white hover:cursor-pointer hover:scale-150 hover:relative hover:z-20 transition-[filter] duration-200 ease-linear"
+                class="rounded-lg hover:border-solid hover:border-2 hover:border-bg-white hover:cursor-pointer hover:scale-125 hover:relative hover:z-20 transition-[filter] duration-200 ease-linear"
                 (mouseenter)="onMouseEnter(movie)"
                 (mouseleave)="onMouseLeave()"
                 [class.grayscale]="hoveredMovie && movie !== hoveredMovie">
@@ -14,4 +16,5 @@
         </div>
     </div>
 </div>
+
 
